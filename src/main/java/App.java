@@ -6,6 +6,6 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 public class App {
     public static void main(String[] args) {
-        staticFileLocation();
+        staticFileLocation("/public");
     }
 }
