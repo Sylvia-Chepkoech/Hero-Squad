@@ -10,4 +10,13 @@ public class Squad {
     private  static ArrayList<Squad> squadsInstances = new ArrayList<>();
     private int id;
 
+    public Squad(String squadName, String squadCause, int maxSize, ArrayList<Heros> heros) {
+        this.squadName = squadName;
+        this.squadCause = squadCause;
+        this.maxSize = maxSize;
+        this.heros = heros;
+        squadsInstances.add(this);
+        this.id = squadsInstances.size();
+
+    }
 }
