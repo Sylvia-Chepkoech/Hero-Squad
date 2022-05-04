@@ -1,26 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/hero.jpeg");
+    background-repeat: no-repeat;
+    background-position; center;
+    background-size: 1350px 900px;
+}
+
 #heading {
     font-family: 'Faster One', cursive;
-    padding: 7em;
     text-align: center;
-    text-transform: uppercase;
-    text-shadow: 0.1rem 0.1rem 0.3rem #333;
-    letter-spacing: 0.15em;
-    font-weight: 500;
-    font-size:16;
+    letter-spacing: 1.15em;
+
+}
+h2 {
+    font-size: 90px;
+    font-weight: 400;
 }
 .links {
     text-align:center;
+    font-size:30px;
 
 }
 
 
 .content {
     text-align:center;
-    text-transform: uppercase;
+   margin-top: 450px;
+   margin-left: 50px;
+    font-size: 20px;
 }
 
-body {
-    background-image: url("../images/hero.jpeg");
-    background-repeat: no repeat;
 
-}

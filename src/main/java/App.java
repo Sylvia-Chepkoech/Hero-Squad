@@ -8,7 +8,17 @@ import models.Heros;
 import models.Squad;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+
+    }
+
     public static void main(String[] args) {
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -38,7 +48,7 @@ public class App {
             return new ModelAndView(model, "heros.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/squads/new", (request, response) -> {
+        get("/squad/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Heros> heros=Heros.getAllInstances();
             ArrayList<Heros> herosList=new ArrayList<>();
@@ -49,17 +59,17 @@ public class App {
             }
 
             model.put("heros",Heros.getAllInstances());
-            return new ModelAndView(model,"squadForm.hbs");
+            return new ModelAndView(model,"squad-form.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/squad", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             String name = request.queryParams("squadName");
             String cause=request.queryParams("squadCause");
-            int maxSize=Integer.parseInt(request.queryParams("squadSize"));
+            int maxSize=Integer.parseInt(request.queryParams("maxSize"));
             ArrayList<Heros> heros=new ArrayList<>();
-            if(request.queryParamsValues("squadHeros")!=null){
-                String[] selectedHeros= request.queryParamsValues("squadHeros");
+            if(request.queryParamsValues("heros")!=null){
+                String[] selectedHeros= request.queryParamsValues("heros");
                 for(int i=1;i<=selectedHeros.length;i++){
                     Heros addHero=Heros.findById(i);
                     if(heros.size()<maxSize){
@@ -76,8 +86,8 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         get("/squad", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-            model.put("squads", Squad.getSquadsInstances());
+            Map<String, Object> model = new HashMap<>();
+            model.put("squad", Squad.getSquadsInstances());
             return new ModelAndView(model, "squad.hbs");
         }, new HandlebarsTemplateEngine());
 

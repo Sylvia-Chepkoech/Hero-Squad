@@ -1,0 +1,14 @@
+.complete{
+    text-align: center;
+    color: black;
+    font-size: 4rem;
+    font-weight: 800;
+    padding-top: 200px;
+}
+
+.complete .btn-info{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 0.5em;
+    border-radius: 2em;
+}

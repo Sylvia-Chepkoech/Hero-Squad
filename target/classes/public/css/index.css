@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/hero.jpeg");
+    background-repeat: no-repeat;
+    background-position; center;
+    background-size: 1350px 900px;
+}
+
+#heading {
+    font-family: 'Faster One', cursive;
+    text-align: center;
+    letter-spacing: 1.15em;
+
+}
+h2 {
+    font-size: 90px;
+    font-weight: 400;
+}
+.links {
+    text-align:center;
+    font-size:30px;
+
+}
+
+
+.content {
+    text-align:center;
+   margin-top: 450px;
+   margin-left: 50px;
+    font-size: 20px;
+}
+
+
