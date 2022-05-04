@@ -12,8 +12,8 @@
 
 You can create as many heroes and squads as you like but note that a hero cannot belong to more than one squad.
 
-You may also add any number of heroes in your squad and the number of heroes in your squad cannot exceed the number that you set.</p>
-
+You may also add any number of heroes in your squad and the number of heroes in your squad cannot exceed the number that you set.</p>Link
+https://kokoriko.herokuapp.com/
 ## Installation
 ### Requirements
 * Either a computer,phone,tablet or an Ipad
